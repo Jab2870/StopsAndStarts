@@ -50,6 +50,10 @@ body:
         - label: WiFi
         - label: LPG
   - type: textarea
+    id: price
+    attributes:
+      label: Price Details
+  - type: textarea
     id: description
     attributes:
       label: Description
