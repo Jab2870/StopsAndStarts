@@ -14,7 +14,7 @@ in a van, please consider submitting them.
 Eventually, places will probably be in something like 
 
 ```
-content/<country>/<county>/<placename>.md
+content/places/<country>/<county>/<placename>.md
 ```
 
 The markdown file should have a frontmatter that specifies things like the
