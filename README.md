@@ -14,8 +14,15 @@ in a van, please consider submitting them.
 Eventually, places will probably be in something like 
 
 ```
-content/places/<country>/<county>/<placename>.md
+content/places/<country>/<county>/<placename>/index.md
 ```
+
+This will allow photos etc to also be stored in the placename folder.
+
+If you are going to submit photos - PLEASE USE GIT LFS. 
+
+Eventually translations will also be possible by having index.fr.md (for
+example) although that is something that will probably come in the future.
 
 The markdown file should have a frontmatter that specifies things like the
 longditude and latitude, height restrictions, whether overnight parking is
