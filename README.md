@@ -9,6 +9,12 @@ I plan on making a hugo site for this eventually (hence the hugo skeleton), but
 for now, I want to start with collecting data. If you have places you can park
 in a van, please consider submitting them.
 
+## Submit a Place
+
+
+[Submit a New Place](https://github.com/Jab2870/OpenVanPark/issues/new?template=submit-location.yml)
+
+
 ## What to include
 
 Eventually, places will probably be in something like 
