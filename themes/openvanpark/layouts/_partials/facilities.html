@@ -1,0 +1,22 @@
+
+<ul>
+	{{ range $termname := .Params.facilities }}
+	{{$termurl := $termname | urlize }}
+	{{- with $.Site.GetPage "facilities" $termurl}}
+	<li>
+		{{ if .Params.icon }}
+			{{ with .Resources.Get .Params.icon }}
+				{{ (.RelPermalink | readFile | safeHTML) }}
+			{{ else }}
+				<div>No Icon</div>
+			{{ end }}
+		{{ else }}
+			<div>No Icon</div>
+		{{ end }}
+		<div>{{ .Title }}</div>
+	</li>
+	{{ end }}
+	{{ end }}
+</ul>
+
+

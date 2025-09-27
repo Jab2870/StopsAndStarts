@@ -5,8 +5,8 @@ facilities:
   - Toilets
 heightbarrier: 0
 location:
-  lat: 52.248199
-  lon: 0.719756
+  latitude: 52.248199
+  longitude: 0.719756
   postcode: IP33 1XT
 ---
 

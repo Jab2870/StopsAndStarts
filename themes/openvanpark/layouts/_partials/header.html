@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+{{ with site.Params.languageCode }}<html lang="{{ . }}">{{ end }}
+	<head>
+		<title>{{ if .Title }}{{ .Title }} | {{ end }} {{ site.Params.title }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{{ with site.Params.subtitle }}<meta name="description" content="{{ . }}">{{ end }}
+		{{ with site.Params.Author.name }}<meta name="author" content="{{ . }}">{{ end }}
+		<meta name="keywords" content="
+			{{- if .IsHome -}}
+				{{- if site.Params.keywords -}}
+		    	{{- range $i, $e := site.Params.keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end -}}
+					{{ end -}}
+			{{ end -}}
+			{{ if .IsPage }}
+				{{- if .Params.tags -}}
+		    	{{- range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}
+				{{- end -}}
+			{{ end -}}" />
+		{{- with .OutputFormats.Get "rss" -}}
+    	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+		{{- end -}}
+		{{ hugo.Generator }}
+		{{ $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
+		<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+	</head>

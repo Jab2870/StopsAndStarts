@@ -1,0 +1,45 @@
+{{ define "main" }}
+
+			<!-- Main layouts/places/single.html -->
+				<section id="main" class="container">
+					<header>
+						<h1>{{ if .Draft }}DRAFT: {{end}}{{ .Params.title }}</h1>
+						{{ with .Params.subtitle }}<p>{{ . }}</p>{{ end }}
+					</header>
+					<div class="box">
+						{{ with .Params.location }}
+						<span class="image featured">
+							{{ partial "map.html" (dict
+							"points" (slice .)
+							"id" "featured_map") }}
+						</span>
+						{{ else }}
+							<div class="warn">No Latitude and Longitude</div>
+						{{ end }}
+					</div>
+					<div class="box facilities">
+						<h2>Facilities</h2>
+						{{ partial "facilities.html" . }}
+					</div>
+					<div class="box">
+						<div class="page-content">{{ .Content }}</div>
+						{{ if or .Params.tags .Params.date }}
+							<hr />
+							<div id="meta">
+							{{ with .Params.tags }}
+								<p>Tags:
+									{{ range $index, $key:= . }}
+										{{ if $index }}, {{ end }}
+										{{ if gt (len $key) 0 }}
+								  		<a href="/tags/{{$key | urlize }}/">#{{ $key }}</a>
+										{{ end }} {{/* if gt len */}}
+									{{ end }} {{/* range */}}
+							  </p>
+							{{ end }} {{/* if tags */}}
+							{{ with .Params.date }}<p class="meta">{{ i18n "published" }} {{ . | dateFormat "January 2, 2006"}}</p>{{ end }}
+							{{ with .Params.lastmod }}<p class="meta">{{ i18n "updated" }} {{ . | dateFormat "January 2, 2006"}}</p>{{ end }}
+							</div>
+						{{ end }} {{/* if meta */}}
+					</div>
+				</section>
+{{ end }}

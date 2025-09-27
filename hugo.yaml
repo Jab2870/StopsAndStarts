@@ -1,3 +1,6 @@
 baseURL: 'https://openvanpark/' # TBD
 languageCode: 'en-gb'
 title: 'Open Van Park'
+theme: openvanpark
+taxonomies:
+  facility: facilities
