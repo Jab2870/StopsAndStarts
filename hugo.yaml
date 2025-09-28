@@ -1,4 +1,4 @@
-baseURL: 'https://openvanpark/' # TBD
+baseURL: 'https://stopsandstarts.com/'
 languageCode: 'en-gb'
 title: 'Open Van Park'
 theme: openvanpark
