@@ -1,6 +1,6 @@
-# Open Van Park
+# Starts and Stops
 
-(Naming stuff is hard)
+(Previous working name was open van parks - naming stuff is hard)
 
 This is the very early stages of a repository of places you can park vans. Think
 something like park4night, but open source and open data.
