@@ -6,6 +6,7 @@ location:
   postcode: HG4 1LY
 facilities:
   - Toilets
+  - Bins
 ---
 
 Fantastic spot with easy walk into Ripon town centre. Toilets available although
