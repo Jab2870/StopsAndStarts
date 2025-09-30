@@ -19,7 +19,7 @@ body:
       description: county
       placeholder: ex. Suffolk
     validations:
-      required: true
+      required: false
   - type: input
     id: lat
     attributes:
